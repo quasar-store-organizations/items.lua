@@ -1,5 +1,6 @@
 QBShared = QBShared or {}
 QBShared.Items = {
+
     -- WEAPONS
 
     -- Melee
@@ -3104,6 +3105,32 @@ QBShared.Items = {
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'It is very fragile, watch out'
     },
+    ['chain'] = {
+        ['name'] = 'chain',
+        ['label'] = 'Chain',
+        ['weight'] = 100,
+        ['type'] = 'item',
+        ['image'] = 'goldchain.png',
+        ['unique'] = true,
+        ['useable'] = true,
+        ['shouldClose'] = false,
+        ['combinable'] = nil,
+        ['rare'] = 'epic', -- epic, legendary, common
+        ['description'] = 'It is very fragile, watch out'
+    },
+    ['watch'] = {
+        ['name'] = 'watch',
+        ['label'] = 'Watch',
+        ['weight'] = 100,
+        ['type'] = 'item',
+        ['image'] = 'rolex.png',
+        ['unique'] = false,
+        ['useable'] = false,
+        ['shouldClose'] = false,
+        ['combinable'] = nil,
+        ['rare'] = 'epic', -- epic, legendary, common
+        ['description'] = 'It is very fragile, watch out'
+    },
 
     -- Tools
     ['lockpick'] = {
@@ -3283,6 +3310,19 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'A nice toolbox with stuff to repair your vehicle'
+    },
+    ['weapon_repairkit'] = {
+        ['name'] = 'weapon_repairkit',
+        ['label'] = 'Weapon Repairkit',
+        ['weight'] = 4000,
+        ['type'] = 'item',
+        ['image'] = 'advancedkit.png',
+        ['unique'] = false,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['rare'] = 'epic', -- epic, legendary, common
+        ['description'] = 'A nice toolbox with stuff to repair your weapon'
     },
     ['cleaningkit'] = {
         ['name'] = 'cleaningkit',
@@ -4449,30 +4489,6 @@ QBShared.Items = {
         ['weight'] = 0,
         ['type'] = 'item',
         ['image'] = 'bag.png',
-        ['unique'] = true,
-        ['useable'] = true,
-        ['shouldClose'] = true,
-        ['combinable'] = nil,
-        ['description'] = 'A nice piece of clothing'
-    },
-    ['bracelet'] = {
-        ['name'] = 'bracelet',
-        ['label'] = 'Bracelet',
-        ['weight'] = 100,
-        ['type'] = 'item',
-        ['image'] = 'goldchain.png',
-        ['unique'] = true,
-        ['useable'] = true,
-        ['shouldClose'] = true,
-        ['combinable'] = nil,
-        ['description'] = 'A nice piece of clothing'
-    },
-    ['watch'] = {
-        ['name'] = 'watch',
-        ['label'] = 'Watch',
-        ['weight'] = 100,
-        ['type'] = 'item',
-        ['image'] = 'rolex.png',
         ['unique'] = true,
         ['useable'] = true,
         ['shouldClose'] = true,

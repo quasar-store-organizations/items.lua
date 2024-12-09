@@ -2410,9 +2410,32 @@ QBShared.Items = {
         ['created'] = nil,
         ['decay'] = 0.15,
         ['delete'] = false,
-        ['object'] = 'ng_proc_candy01a',
+        ['object'] = 'prop_choc_ego',
         ['rare'] = 'common', -- epic, legendary, common
-        ['description'] = 'Some delicious candy :O'
+        ['description'] = 'Some delicious candy :O',
+        ['client'] = {
+        status = {
+            hunger = 200000,
+        },
+        usetime = 2500,
+        anim = {
+            dict = 'mp_player_inteat@burger',
+            clip = 'mp_player_int_eat_burger'
+        },
+        prop = {
+            model = 'prop_choc_ego',
+            bone = 60309,
+            pos = vec3(0.000000, 0.000000, 0.000000),
+            rot = vec3(0.000000, 0.000000, 0.000000)
+        },
+        disable = {
+            move = true,
+            car = true,
+            mouse = false,
+            combat = true,
+        },
+        removeAfterUse = true
+    }
     },
     ['snikkel_candy'] = {
         ['name'] = 'snikkel_candy',
@@ -2445,7 +2468,30 @@ QBShared.Items = {
         ['decay'] = 0.07,
         ['delete'] = false,
         ['object'] = 'prop_sandwich_01',
-        ['description'] = 'Nice bread for your stomach'
+        ['description'] = 'Nice bread for your stomach',
+        ['client'] = {
+        status = {
+            hunger = 200000,
+        },
+        usetime = 2500,
+        anim = {
+            dict = 'mp_player_inteat@burger',
+            clip = 'mp_player_int_eat_burger'
+        },
+        prop = {
+            model = 'prop_sandwich_01',
+            bone = 18905,
+            pos = vector3(0.130000, 0.050000, 0.020000),
+            rot = vector3(-50.000000, 16.000000, 60.000000),
+        },
+        disable = {
+            move = false,
+            car = true,
+            mouse = false,
+            combat = true,
+        },
+        removeAfterUse = true
+    }
     },
 
     -- Drink ITEMS
@@ -2500,9 +2546,32 @@ QBShared.Items = {
         ['created'] = nil,
         ['decay'] = 0.05,
         ['delete'] = false,
-        ['object'] = 'ng_proc_coffee_01a',
+        ['object'] = 'p_amb_coffeecup_01',
         ['rare'] = 'common', -- epic, legendary, common
-        ['description'] = 'Pump 4 Caffeine'
+        ['description'] = 'Pump 4 Caffeine',
+        ['client'] = {
+        status = {
+            thirst = 150000,
+        },
+        usetime = 2500,
+        anim = {
+            dict = 'amb@world_human_drinking@coffee@male@idle_a',
+            clip = 'idle_c'
+        },
+        prop = {
+            model = 'p_amb_coffeecup_01',
+            bone = 28422,
+            pos = vec3(0.000000, 0.000000, 0.000000),
+            rot = vec3(0.000000, 0.000000, 0.000000)
+        },
+        disable = {
+            move = false,
+            car = true,
+            mouse = false,
+            combat = true,
+        },
+        removeAfterUse = true
+    }
     },
     ['kurkakola'] = {
         ['name'] = 'kurkakola',
@@ -2519,7 +2588,30 @@ QBShared.Items = {
         ['delete'] = false,
         ['object'] = 'prop_ecola_can',
         ['rare'] = 'common', -- epic, legendary, common
-        ['description'] = 'For all the thirsty out there'
+        ['description'] = 'For all the thirsty out there',
+        ['client'] = {
+        status = {
+            thirst = 150000,
+        },
+        usetime = 2500,
+        anim = {
+            dict = 'mp_player_intdrink',
+            clip = 'loop_bottle'
+        },
+        prop = {
+            model = 'prop_ecola_can',
+            bone = 18905,
+            pos = vec3(0.120000, 0.008000, 0.030000),
+            rot = vec3(240.000000, -60.000000, 0.000000)
+        },
+        disable = {
+            move = false,
+            car = true,
+            mouse = false,
+            combat = true,
+        },
+        removeAfterUse = true
+    }
     },
 
     -- Alcohol
@@ -2537,7 +2629,30 @@ QBShared.Items = {
         ['decay'] = 0.10,
         ['delete'] = false,
         ['object'] = 'prop_beer_am',
-        ['description'] = 'Nothing like a good cold beer!'
+        ['description'] = 'Nothing like a good cold beer!',
+        ['client'] = {
+        status = {
+            thirst = 50000,
+        },
+        usetime = 5000,
+        anim = {
+            dict = 'amb@world_human_drinking@beer@male@idle_a',
+            clip = 'idle_c'
+        },
+        prop = {
+            model = 'prop_amb_beer_bottle',
+            bone = 28422,
+            pos = vec3(0.000000, 0.000000, 0.060000),
+            rot = vec3(0.000000, 15.000000, 0.000000)
+        },
+        disable = {
+            move = false,
+            car = true,
+            mouse = false,
+            combat = true,
+        },
+        removeAfterUse = true
+    }
     },
     ['whiskey'] = {
         ['name'] = 'whiskey',
@@ -2554,7 +2669,30 @@ QBShared.Items = {
         ['delete'] = false,
         ['object'] = 'p_whiskey_bottle_s',
         ['rare'] = 'common', -- epic, legendary, common
-        ['description'] = 'For all the thirsty out there'
+        ['description'] = 'For all the thirsty out there',
+        ['client'] = {
+        status = {
+            thirst = 50000,
+        },
+        usetime = 5000,
+        anim = {
+            dict = 'mp_player_intdrink',
+            clip = 'loop_bottle'
+        },
+        prop = {
+            model = 'prop_cs_whiskey_bottle',
+            bone = 60309,
+            pos = vec3(0.000000, 0.000000, 0.000000),
+            rot = vec3(0.000000, 0.000000, 0.000000)
+        },
+        disable = {
+            move = false,
+            car = true,
+            mouse = false,
+            combat = true,
+        },
+        removeAfterUse = true
+    }
     },
     ['vodka'] = {
         ['name'] = 'vodka',
@@ -2571,7 +2709,30 @@ QBShared.Items = {
         ['delete'] = false,
         ['object'] = 'prop_vodka_bottle',
         ['rare'] = 'common', -- epic, legendary, common
-        ['description'] = 'For all the thirsty out there'
+        ['description'] = 'For all the thirsty out there',
+        ['client'] = {
+        status = {
+            thirst = 50000,
+        },
+        usetime = 5000,
+        anim = {
+            dict = 'mp_player_intdrink',
+            clip = 'loop_bottle'
+        },
+        prop = {
+            model = 'prop_vodka_bottle',
+            bone = 18905,
+            pos = vec3(0.000000, -0.260000, 0.100000),
+            rot = vec3(240.000000, -60.000000, 0.000000)
+        },
+        disable = {
+            move = false,
+            car = true,
+            mouse = false,
+            combat = true,
+        },
+        removeAfterUse = true
+    }
     },
     ['grape'] = {
         ['name'] = 'grape',
@@ -2604,7 +2765,30 @@ QBShared.Items = {
         ['delete'] = false,
         ['object'] = 'prop_wine_red',
         ['rare'] = 'common', -- epic, legendary, common
-        ['description'] = 'Some good wine to drink on a fine evening'
+        ['description'] = 'Some good wine to drink on a fine evening',
+        ['client'] = {
+        status = {
+            thirst = 50000,
+        },
+        usetime = 5000,
+        anim = {
+            dict = 'mp_player_intdrink',
+            clip = 'loop_bottle'
+        },
+        prop = {
+            model = 'prop_wine_red',
+            bone = 18905,
+            pos = vec3(0.000000, -0.260000, 0.100000),
+            rot = vec3(240.000000, -60.000000, 0.000000)
+        },
+        disable = {
+            move = false,
+            car = true,
+            mouse = false,
+            combat = true,
+        },
+        removeAfterUse = true
+    }
     },
     ['grapejuice'] = {
         ['name'] = 'grapejuice',
@@ -2640,7 +2824,27 @@ QBShared.Items = {
         ['delete'] = false,
         ['object'] = 'p_amb_joint_01',
         ['rare'] = 'common', -- epic, legendary, common
-        ['description'] = 'Sidney would be very proud at you'
+        ['description'] = 'Sidney would be very proud at you',
+        ['client'] = {
+        usetime = 7500,
+        anim = {
+            dict = 'amb@world_human_smoking@male@male_a@enter',
+            clip = 'enter'
+        },
+        prop = {
+            model = 'p_cs_joint_02',
+            bone = 47419,
+            pos = vec3(0.015000, -0.009000, 0.003000),
+            rot = vec3(55.000000, 0.000000, 110.000000)
+        },
+        disable = {
+            move = false,
+            car = true,
+            mouse = false,
+            combat = true,
+        },
+        removeAfterUse = true
+    }
     },
     ['cokebaggy'] = {
         ['name'] = 'cokebaggy',

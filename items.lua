@@ -13,7 +13,8 @@ QBShared.Items = {
         ['image'] = 'placeholder.png',
         ['unique'] = true,
         ['useable'] = false,
-        ['description'] = 'Fisticuffs'
+        ['description'] = 'Fisticuffs',
+        ['useableIn'] = 'hotbar',
     },
     ['weapon_dagger'] = {
         ['name'] = 'weapon_dagger',
@@ -727,6 +728,7 @@ QBShared.Items = {
         ['ammotype'] = 'AMMO_RIFLE',
         ['image'] = 'weapon_assaultrifle.png',
         ['unique'] = true,
+        ['job'] = { 'police' },
         ['useable'] = false,
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'A rapid-fire, magazine-fed automatic rifle designed for infantry use'
@@ -750,6 +752,7 @@ QBShared.Items = {
         ['type'] = 'weapon',
         ['ammotype'] = 'AMMO_RIFLE',
         ['image'] = 'weapon_carbinerifle.png',
+        ['objectRotation'] = vec3(80.0, 60.0, 0.0),
         ['unique'] = true,
         ['useable'] = false,
         ['rare'] = 'epic', -- epic, legendary, common
@@ -765,7 +768,8 @@ QBShared.Items = {
         ['unique'] = true,
         ['useable'] = true,
         ['rare'] = 'legendary', -- epic, legendary, common
-        ['description'] = 'Carbine Rifle MK2'
+        ['description'] = 'Carbine Rifle MK2',
+        ['disableThrow'] = true
     },
     ['weapon_advancedrifle'] = {
         ['name'] = 'weapon_advancedrifle',
@@ -1715,7 +1719,7 @@ QBShared.Items = {
 
 
     -- SNIPER ATTACHMENTS
-    ['sniper_defaultclip'] = {
+    ['sniper_defaultclip']          = {
         ['name'] = 'sniper_defaultclip',
         ['label'] = 'Sniper Default Clip',
         ['weight'] = 1000,
@@ -1728,7 +1732,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'Sniper Default Clip Attachment'
     },
-    ['sniper_extendedclip'] = {
+    ['sniper_extendedclip']         = {
         ['name'] = 'sniper_extendedclip',
         ['label'] = 'Sniper Extended Clip',
         ['weight'] = 1000,
@@ -1741,7 +1745,7 @@ QBShared.Items = {
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'Sniper Extended Clip Attachment'
     },
-    ['sniper_flashlight'] = {
+    ['sniper_flashlight']           = {
         ['name'] = 'sniper_flashlight',
         ['label'] = 'Sniper Flashlight',
         ['weight'] = 1000,
@@ -1754,7 +1758,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'Sniper Flashlight Attachment'
     },
-    ['sniper_scope'] = {
+    ['sniper_scope']                = {
         ['name'] = 'sniper_scope',
         ['label'] = 'Sniper Scope',
         ['weight'] = 1000,
@@ -1767,7 +1771,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'Sniper Scope Attachment'
     },
-    ['sniper_smallscope'] = {
+    ['sniper_smallscope']           = {
         ['name'] = 'sniper_smallscope',
         ['label'] = 'Sniper Small Scope',
         ['weight'] = 1000,
@@ -1780,7 +1784,7 @@ QBShared.Items = {
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'Sniper Small Scope Attachment'
     },
-    ['sniper_largescope'] = {
+    ['sniper_largescope']           = {
         ['name'] = 'sniper_largescope',
         ['label'] = 'Sniper Large Scope',
         ['weight'] = 1000,
@@ -1793,7 +1797,7 @@ QBShared.Items = {
         ['rare'] = 'legendary', -- epic, legendary, common
         ['description'] = 'Sniper Large Scope Attachment'
     },
-    ['sniper_suppressor'] = {
+    ['sniper_suppressor']           = {
         ['name'] = 'sniper_suppressor',
         ['label'] = 'Sniper Suppressor',
         ['weight'] = 1000,
@@ -1806,7 +1810,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'Sniper Suppressor Attachment'
     },
-    ['sniper_holoscope'] = {
+    ['sniper_holoscope']            = {
         ['name'] = 'sniper_holoscope',
         ['label'] = 'Sniper Holographic Sight',
         ['weight'] = 1000,
@@ -1819,7 +1823,7 @@ QBShared.Items = {
         ['rare'] = 'legendary', -- epic, legendary, common
         ['description'] = 'Sniper Holographic Sight Attachment'
     },
-    ['sniper_squaredmuzzle'] = {
+    ['sniper_squaredmuzzle']        = {
         ['name'] = 'sniper_squaredmuzzle',
         ['label'] = 'Sniper Squared Muzzle',
         ['weight'] = 1000,
@@ -1832,7 +1836,7 @@ QBShared.Items = {
         ['rare'] = 'legendary', -- epic, legendary, common
         ['description'] = 'Sniper Squared Muzzle Attachment'
     },
-    ['sniper_barrel'] = {
+    ['sniper_barrel']               = {
         ['name'] = 'sniper_barrel',
         ['label'] = 'Sniper Heavy Barrel',
         ['weight'] = 1000,
@@ -1845,7 +1849,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'Sniper Heavy Barrel Attachment'
     },
-    ['sniper_grip'] = {
+    ['sniper_grip']                 = {
         ['name'] = 'sniper_grip',
         ['label'] = 'Sniper Grip',
         ['weight'] = 1000,
@@ -1860,7 +1864,7 @@ QBShared.Items = {
     },
 
     -- Weapon Tints
-    ['black_weapontint'] = {
+    ['black_weapontint']            = {
         ['name'] = 'black_weapontint',
         ['label'] = 'Black Tint',
         ['weight'] = 1000,
@@ -1872,9 +1876,10 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['rare'] = 'common', -- epic, legendary, common
         ['object'] = 'prop_cs_spray_can',
+        ['objectRotation'] = vec3(15.0, 60.0, 1.5),
         ['description'] = 'Default/Black Weapon Tint'
     },
-    ['green_weapontint'] = {
+    ['green_weapontint']            = {
         ['name'] = 'green_weapontint',
         ['label'] = 'Green Tint',
         ['weight'] = 1000,
@@ -1888,7 +1893,7 @@ QBShared.Items = {
         ['object'] = 'prop_cs_spray_can',
         ['description'] = 'Green Weapon Tint'
     },
-    ['gold_weapontint'] = {
+    ['gold_weapontint']             = {
         ['name'] = 'gold_weapontint',
         ['label'] = 'Gold Tint',
         ['weight'] = 1000,
@@ -1902,7 +1907,7 @@ QBShared.Items = {
         ['object'] = 'prop_cs_spray_can',
         ['description'] = 'Gold Weapon Tint'
     },
-    ['pink_weapontint'] = {
+    ['pink_weapontint']             = {
         ['name'] = 'pink_weapontint',
         ['label'] = 'Pink Tint',
         ['weight'] = 1000,
@@ -1916,7 +1921,7 @@ QBShared.Items = {
         ['object'] = 'prop_cs_spray_can',
         ['description'] = 'Pink Weapon Tint'
     },
-    ['army_weapontint'] = {
+    ['army_weapontint']             = {
         ['name'] = 'army_weapontint',
         ['label'] = 'Army Tint',
         ['weight'] = 1000,
@@ -1930,7 +1935,7 @@ QBShared.Items = {
         ['object'] = 'prop_cs_spray_can',
         ['description'] = 'Army Weapon Tint'
     },
-    ['lspd_weapontint'] = {
+    ['lspd_weapontint']             = {
         ['name'] = 'lspd_weapontint',
         ['label'] = 'LSPD Tint',
         ['weight'] = 1000,
@@ -1944,7 +1949,7 @@ QBShared.Items = {
         ['object'] = 'prop_cs_spray_can',
         ['description'] = 'LSPD Weapon Tint'
     },
-    ['orange_weapontint'] = {
+    ['orange_weapontint']           = {
         ['name'] = 'orange_weapontint',
         ['label'] = 'Orange Tint',
         ['weight'] = 1000,
@@ -1958,7 +1963,7 @@ QBShared.Items = {
         ['object'] = 'prop_cs_spray_can',
         ['description'] = 'Orange Weapon Tint'
     },
-    ['plat_weapontint'] = {
+    ['plat_weapontint']             = {
         ['name'] = 'plat_weapontint',
         ['label'] = 'Platinum Tint',
         ['weight'] = 1000,
@@ -1972,7 +1977,7 @@ QBShared.Items = {
         ['object'] = 'prop_cs_spray_can',
         ['description'] = 'Platinum Weapon Tint'
     },
-    ['weapontint_url'] = {
+    ['weapontint_url']              = {
         ['name'] = 'weapontint_url',
         ['label'] = 'URL Tint',
         ['weight'] = 1000,
@@ -1986,7 +1991,7 @@ QBShared.Items = {
         ['object'] = 'ng_proc_spraycan01a',
         ['description'] = 'Luxury Finish Tint'
     },
-    ['luxuryfinish_weapontint'] = {
+    ['luxuryfinish_weapontint']     = {
         ['name'] = 'luxuryfinish_weapontint',
         ['label'] = 'Luxury Finish',
         ['weight'] = 1000,
@@ -2000,7 +2005,7 @@ QBShared.Items = {
         ['object'] = 'ng_proc_spraycan01a',
         ['description'] = 'Luxury Finish Tint'
     },
-    ['digital_weapontint'] = {
+    ['digital_weapontint']          = {
         ['name'] = 'digital_weapontint',
         ['label'] = 'Digital Camo',
         ['weight'] = 1000,
@@ -2014,7 +2019,7 @@ QBShared.Items = {
         ['object'] = 'prop_paint_spray01b',
         ['description'] = 'Digital Camo Tint'
     },
-    ['brushstroke_weapontint'] = {
+    ['brushstroke_weapontint']      = {
         ['name'] = 'brushstroke_weapontint',
         ['label'] = 'Brushstroke Camo',
         ['weight'] = 1000,
@@ -2028,7 +2033,7 @@ QBShared.Items = {
         ['object'] = 'prop_paint_spray01b',
         ['description'] = 'Brushstroke Camo Tint'
     },
-    ['woodland_weapontint'] = {
+    ['woodland_weapontint']         = {
         ['name'] = 'woodland_weapontint',
         ['label'] = 'Woodland Camo',
         ['weight'] = 1000,
@@ -2042,7 +2047,7 @@ QBShared.Items = {
         ['object'] = 'prop_paint_spray01b',
         ['description'] = 'Woodland Camo Tint'
     },
-    ['skull_weapontint'] = {
+    ['skull_weapontint']            = {
         ['name'] = 'skull_weapontint',
         ['label'] = 'Skull Camo',
         ['weight'] = 1000,
@@ -2056,7 +2061,7 @@ QBShared.Items = {
         ['object'] = 'prop_paint_spray01b',
         ['description'] = 'Skull Camo Tint'
     },
-    ['sessanta_weapontint'] = {
+    ['sessanta_weapontint']         = {
         ['name'] = 'sessanta_weapontint',
         ['label'] = 'Sessanta Camo',
         ['weight'] = 1000,
@@ -2070,7 +2075,7 @@ QBShared.Items = {
         ['object'] = 'prop_paint_spray01b',
         ['description'] = 'Sessanta Camo Tint'
     },
-    ['perseus_weapontint'] = {
+    ['perseus_weapontint']          = {
         ['name'] = 'perseus_weapontint',
         ['label'] = 'Perseus Camo',
         ['weight'] = 1000,
@@ -2084,7 +2089,7 @@ QBShared.Items = {
         ['object'] = 'prop_paint_spray01b',
         ['description'] = 'Perseus Camo Tint'
     },
-    ['leopard_weapontint'] = {
+    ['leopard_weapontint']          = {
         ['name'] = 'leopard_weapontint',
         ['label'] = 'Leopard Camo',
         ['weight'] = 1000,
@@ -2098,7 +2103,7 @@ QBShared.Items = {
         ['object'] = 'prop_paint_spray01b',
         ['description'] = 'Leopard Camo Tint'
     },
-    ['zebra_weapontint'] = {
+    ['zebra_weapontint']            = {
         ['name'] = 'zebra_weapontint',
         ['label'] = 'Zebra Camo',
         ['weight'] = 1000,
@@ -2112,7 +2117,7 @@ QBShared.Items = {
         ['object'] = 'prop_paint_spray01b',
         ['description'] = 'Zebra Camo Tint'
     },
-    ['geometric_weapontint'] = {
+    ['geometric_weapontint']        = {
         ['name'] = 'geometric_weapontint',
         ['label'] = 'Geometric Camo',
         ['weight'] = 1000,
@@ -2126,7 +2131,7 @@ QBShared.Items = {
         ['object'] = 'prop_paint_spray01b',
         ['description'] = 'Geometric Camo Tint'
     },
-    ['boom_weapontint'] = {
+    ['boom_weapontint']             = {
         ['name'] = 'boom_weapontint',
         ['label'] = 'Boom! Camo',
         ['weight'] = 1000,
@@ -2140,7 +2145,7 @@ QBShared.Items = {
         ['object'] = 'prop_paint_spray01b',
         ['description'] = 'Boom! Camo Tint'
     },
-    ['patriot_weapontint'] = {
+    ['patriot_weapontint']          = {
         ['name'] = 'patriot_weapontint',
         ['label'] = 'Patriotic Camo',
         ['weight'] = 1000,
@@ -2157,7 +2162,7 @@ QBShared.Items = {
 
     -- ITEMS
     -- Ammo ITEMS
-    ['pistol_ammo'] = {
+    ['pistol_ammo']                 = {
         ['name'] = 'pistol_ammo',
         ['label'] = 'Pistol ammo',
         ['weight'] = 200,
@@ -2170,7 +2175,7 @@ QBShared.Items = {
         ['object'] = 'prop_ld_ammo_pack_01',
         ['description'] = 'Ammo for Pistols'
     },
-    ['rifle_ammo'] = {
+    ['rifle_ammo']                  = {
         ['name'] = 'rifle_ammo',
         ['label'] = 'Rifle ammo',
         ['weight'] = 1000,
@@ -2183,7 +2188,7 @@ QBShared.Items = {
         ['object'] = 'prop_ld_ammo_pack_02',
         ['description'] = 'Ammo for Rifles'
     },
-    ['smg_ammo'] = {
+    ['smg_ammo']                    = {
         ['name'] = 'smg_ammo',
         ['label'] = 'SMG ammo',
         ['weight'] = 500,
@@ -2196,7 +2201,7 @@ QBShared.Items = {
         ['object'] = 'prop_ld_ammo_pack_02',
         ['description'] = 'Ammo for Sub Machine Guns'
     },
-    ['shotgun_ammo'] = {
+    ['shotgun_ammo']                = {
         ['name'] = 'shotgun_ammo',
         ['label'] = 'Shotgun ammo',
         ['weight'] = 500,
@@ -2209,7 +2214,7 @@ QBShared.Items = {
         ['object'] = 'prop_ld_ammo_pack_03',
         ['description'] = 'Ammo for Shotguns'
     },
-    ['mg_ammo'] = {
+    ['mg_ammo']                     = {
         ['name'] = 'mg_ammo',
         ['label'] = 'MG ammo',
         ['weight'] = 1000,
@@ -2222,7 +2227,7 @@ QBShared.Items = {
         ['object'] = 'prop_box_ammo07a',
         ['description'] = 'Ammo for Machine Guns'
     },
-    ['snp_ammo'] = {
+    ['snp_ammo']                    = {
         ['name'] = 'snp_ammo',
         ['label'] = 'Sniper ammo',
         ['weight'] = 1000,
@@ -2235,7 +2240,7 @@ QBShared.Items = {
         ['object'] = 'prop_box_ammo07a',
         ['description'] = 'Ammo for Sniper Rifles'
     },
-    ['emp_ammo'] = {
+    ['emp_ammo']                    = {
         ['name'] = 'emp_ammo',
         ['label'] = 'EMP Ammo',
         ['weight'] = 200,
@@ -2248,9 +2253,22 @@ QBShared.Items = {
         ['object'] = 'prop_ld_ammo_pack_03',
         ['description'] = 'Ammo for EMP Launcher'
     },
+    ['rpg_ammo']                    = {
+        ['name'] = 'rpg_ammo',
+        ['label'] = 'RPG Ammo',
+        ['weight'] = 200,
+        ['type'] = 'item',
+        ['image'] = 'rifle_ammo.png',
+        ['unique'] = false,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['object'] = 'prop_ld_ammo_pack_03',
+        ['description'] = 'Ammo for EMP Launcher'
+    },
 
     -- Card ITEMS
-    ['id_card'] = {
+    ['id_card']                     = {
         ['name'] = 'id_card',
         ['label'] = 'ID Card',
         ['weight'] = 0,
@@ -2263,7 +2281,7 @@ QBShared.Items = {
         ['object'] = 'p_ld_id_card_01',
         ['description'] = 'A card containing all your information to identify yourself'
     },
-    ['driver_license'] = {
+    ['driver_license']              = {
         ['name'] = 'driver_license',
         ['label'] = 'Drivers License',
         ['weight'] = 0,
@@ -2276,7 +2294,7 @@ QBShared.Items = {
         ['object'] = 'prop_cs_business_card',
         ['description'] = 'Permit to show you can drive a vehicle'
     },
-    ['lawyerpass'] = {
+    ['lawyerpass']                  = {
         ['name'] = 'lawyerpass',
         ['label'] = 'Lawyer Pass',
         ['weight'] = 0,
@@ -2289,7 +2307,7 @@ QBShared.Items = {
         ['object'] = 'prop_ld_contact_card',
         ['description'] = 'Pass exclusive to lawyers to show they can represent a suspect'
     },
-    ['weaponlicense'] = {
+    ['weaponlicense']               = {
         ['name'] = 'weaponlicense',
         ['label'] = 'Weapon License',
         ['weight'] = 0,
@@ -2302,7 +2320,33 @@ QBShared.Items = {
         ['object'] = 'prop_cs_swipe_card',
         ['description'] = 'Weapon License'
     },
-    ['visa'] = {
+    ['creditcard']                  = {
+        ['name'] = 'creditcard',
+        ['label'] = 'Credit Card',
+        ['weight'] = 0,
+        ['type'] = 'item',
+        ['image'] = 'bank_card.png',
+        ['unique'] = true,
+        ['useable'] = true,
+        ['shouldClose'] = false,
+        ['combinable'] = nil,
+        ['description'] = 'Visa card, can be used via ATM',
+        client = { export = 'qs-banking.CreateCard' }
+    },
+    ['licenseplate']                = {
+        ['name'] = 'licenseplate',
+        ['label'] = 'License Plate',
+        ['weight'] = 0,
+        ['type'] = 'item',
+        ['image'] = 'licenseplate.png',
+        ['unique'] = true,
+        ['useable'] = true,
+        ['shouldClose'] = false,
+        ['combinable'] = nil,
+        ['object'] = 'prop_ld_contact_card',
+        ['description'] = 'Pass exclusive to lawyers to show they can represent a suspect'
+    },
+    ['visa']                        = {
         ['name'] = 'visa',
         ['label'] = 'Visa Card',
         ['weight'] = 0,
@@ -2315,7 +2359,7 @@ QBShared.Items = {
         ['object'] = 'prop_cs_credit_card',
         ['description'] = 'Visa can be used via ATM'
     },
-    ['mastercard'] = {
+    ['mastercard']                  = {
         ['name'] = 'mastercard',
         ['label'] = 'Master Card',
         ['weight'] = 0,
@@ -2328,7 +2372,7 @@ QBShared.Items = {
         ['object'] = 'prop_cs_credit_card',
         ['description'] = 'MasterCard can be used via ATM'
     },
-    ['security_card_01'] = {
+    ['security_card_01']            = {
         ['name'] = 'security_card_01',
         ['label'] = 'Security Card A',
         ['weight'] = 0,
@@ -2344,7 +2388,7 @@ QBShared.Items = {
             export = 'qs-inventory.test'
         },
     },
-    ['security_card_02'] = {
+    ['security_card_02']            = {
         ['name'] = 'security_card_02',
         ['label'] = 'Security Card B',
         ['weight'] = 0,
@@ -2359,7 +2403,7 @@ QBShared.Items = {
     },
 
     -- Eat ITEMS
-    ['tosti'] = {
+    ['tosti']                       = {
         ['name'] = 'tosti',
         ['label'] = 'Grilled Cheese Sandwich',
         ['weight'] = 200,
@@ -2374,6 +2418,7 @@ QBShared.Items = {
         ['decay'] = 0.07,
         ['delete'] = false,
         ['object'] = 'prop_sandwich_01',
+        ['useableIn'] = 'wallet',
         ['client'] = {
             status = {
                 hunger = 200000,
@@ -2397,7 +2442,7 @@ QBShared.Items = {
             removeAfterUse = true
         }
     },
-    ['twerks_candy'] = {
+    ['twerks_candy']                = {
         ['name'] = 'twerks_candy',
         ['label'] = 'Twerks',
         ['weight'] = 100,
@@ -2413,31 +2458,32 @@ QBShared.Items = {
         ['object'] = 'prop_choc_ego',
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'Some delicious candy :O',
+        ['useableIn'] = 'inventory',
         ['client'] = {
-        status = {
-            hunger = 200000,
-        },
-        usetime = 2500,
-        anim = {
-            dict = 'mp_player_inteat@burger',
-            clip = 'mp_player_int_eat_burger'
-        },
-        prop = {
-            model = 'prop_choc_ego',
-            bone = 60309,
-            pos = vec3(0.000000, 0.000000, 0.000000),
-            rot = vec3(0.000000, 0.000000, 0.000000)
-        },
-        disable = {
-            move = true,
-            car = true,
-            mouse = false,
-            combat = true,
-        },
-        removeAfterUse = true
-    }
+            status = {
+                hunger = 200000,
+            },
+            usetime = 2500,
+            anim = {
+                dict = 'mp_player_inteat@burger',
+                clip = 'mp_player_int_eat_burger'
+            },
+            prop = {
+                model = 'prop_choc_ego',
+                bone = 60309,
+                pos = vec3(0.000000, 0.000000, 0.000000),
+                rot = vec3(0.000000, 0.000000, 0.000000)
+            },
+            disable = {
+                move = true,
+                car = true,
+                mouse = false,
+                combat = true,
+            },
+            removeAfterUse = true
+        }
     },
-    ['snikkel_candy'] = {
+    ['snikkel_candy']               = {
         ['name'] = 'snikkel_candy',
         ['label'] = 'Snikkel',
         ['weight'] = 100,
@@ -2454,7 +2500,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'Some delicious candy :O'
     },
-    ['sandwich'] = {
+    ['sandwich']                    = {
         ['name'] = 'sandwich',
         ['label'] = 'Sandwich',
         ['weight'] = 200,
@@ -2470,32 +2516,32 @@ QBShared.Items = {
         ['object'] = 'prop_sandwich_01',
         ['description'] = 'Nice bread for your stomach',
         ['client'] = {
-        status = {
-            hunger = 200000,
-        },
-        usetime = 2500,
-        anim = {
-            dict = 'mp_player_inteat@burger',
-            clip = 'mp_player_int_eat_burger'
-        },
-        prop = {
-            model = 'prop_sandwich_01',
-            bone = 18905,
-            pos = vector3(0.130000, 0.050000, 0.020000),
-            rot = vector3(-50.000000, 16.000000, 60.000000),
-        },
-        disable = {
-            move = false,
-            car = true,
-            mouse = false,
-            combat = true,
-        },
-        removeAfterUse = true
-    }
+            status = {
+                hunger = 200000,
+            },
+            usetime = 2500,
+            anim = {
+                dict = 'mp_player_inteat@burger',
+                clip = 'mp_player_int_eat_burger'
+            },
+            prop = {
+                model = 'prop_sandwich_01',
+                bone = 18905,
+                pos = vector3(0.130000, 0.050000, 0.020000),
+                rot = vector3(-50.000000, 16.000000, 60.000000),
+            },
+            disable = {
+                move = false,
+                car = true,
+                mouse = false,
+                combat = true,
+            },
+            removeAfterUse = true
+        }
     },
 
     -- Drink ITEMS
-    ['water_bottle'] = {
+    ['water_bottle']                = {
         ['name'] = 'water_bottle',
         ['label'] = 'Bottle of Water',
         ['weight'] = 500,
@@ -2533,7 +2579,7 @@ QBShared.Items = {
             removeAfterUse = true
         }
     },
-    ['coffee'] = {
+    ['coffee']                      = {
         ['name'] = 'coffee',
         ['label'] = 'Coffee',
         ['weight'] = 200,
@@ -2550,30 +2596,30 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'Pump 4 Caffeine',
         ['client'] = {
-        status = {
-            thirst = 150000,
-        },
-        usetime = 2500,
-        anim = {
-            dict = 'amb@world_human_drinking@coffee@male@idle_a',
-            clip = 'idle_c'
-        },
-        prop = {
-            model = 'p_amb_coffeecup_01',
-            bone = 28422,
-            pos = vec3(0.000000, 0.000000, 0.000000),
-            rot = vec3(0.000000, 0.000000, 0.000000)
-        },
-        disable = {
-            move = false,
-            car = true,
-            mouse = false,
-            combat = true,
-        },
-        removeAfterUse = true
-    }
+            status = {
+                thirst = 150000,
+            },
+            usetime = 2500,
+            anim = {
+                dict = 'amb@world_human_drinking@coffee@male@idle_a',
+                clip = 'idle_c'
+            },
+            prop = {
+                model = 'p_amb_coffeecup_01',
+                bone = 28422,
+                pos = vec3(0.000000, 0.000000, 0.000000),
+                rot = vec3(0.000000, 0.000000, 0.000000)
+            },
+            disable = {
+                move = false,
+                car = true,
+                mouse = false,
+                combat = true,
+            },
+            removeAfterUse = true
+        }
     },
-    ['kurkakola'] = {
+    ['kurkakola']                   = {
         ['name'] = 'kurkakola',
         ['label'] = 'Cola',
         ['weight'] = 500,
@@ -2590,32 +2636,32 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'For all the thirsty out there',
         ['client'] = {
-        status = {
-            thirst = 150000,
-        },
-        usetime = 2500,
-        anim = {
-            dict = 'mp_player_intdrink',
-            clip = 'loop_bottle'
-        },
-        prop = {
-            model = 'prop_ecola_can',
-            bone = 18905,
-            pos = vec3(0.120000, 0.008000, 0.030000),
-            rot = vec3(240.000000, -60.000000, 0.000000)
-        },
-        disable = {
-            move = false,
-            car = true,
-            mouse = false,
-            combat = true,
-        },
-        removeAfterUse = true
-    }
+            status = {
+                thirst = 150000,
+            },
+            usetime = 2500,
+            anim = {
+                dict = 'mp_player_intdrink',
+                clip = 'loop_bottle'
+            },
+            prop = {
+                model = 'prop_ecola_can',
+                bone = 18905,
+                pos = vec3(0.120000, 0.008000, 0.030000),
+                rot = vec3(240.000000, -60.000000, 0.000000)
+            },
+            disable = {
+                move = false,
+                car = true,
+                mouse = false,
+                combat = true,
+            },
+            removeAfterUse = true
+        }
     },
 
     -- Alcohol
-    ['beer'] = {
+    ['beer']                        = {
         ['name'] = 'beer',
         ['label'] = 'Beer',
         ['weight'] = 500,
@@ -2631,30 +2677,30 @@ QBShared.Items = {
         ['object'] = 'prop_beer_am',
         ['description'] = 'Nothing like a good cold beer!',
         ['client'] = {
-        status = {
-            thirst = 50000,
-        },
-        usetime = 5000,
-        anim = {
-            dict = 'amb@world_human_drinking@beer@male@idle_a',
-            clip = 'idle_c'
-        },
-        prop = {
-            model = 'prop_amb_beer_bottle',
-            bone = 28422,
-            pos = vec3(0.000000, 0.000000, 0.060000),
-            rot = vec3(0.000000, 15.000000, 0.000000)
-        },
-        disable = {
-            move = false,
-            car = true,
-            mouse = false,
-            combat = true,
-        },
-        removeAfterUse = true
-    }
+            status = {
+                thirst = 50000,
+            },
+            usetime = 5000,
+            anim = {
+                dict = 'amb@world_human_drinking@beer@male@idle_a',
+                clip = 'idle_c'
+            },
+            prop = {
+                model = 'prop_amb_beer_bottle',
+                bone = 28422,
+                pos = vec3(0.000000, 0.000000, 0.060000),
+                rot = vec3(0.000000, 15.000000, 0.000000)
+            },
+            disable = {
+                move = false,
+                car = true,
+                mouse = false,
+                combat = true,
+            },
+            removeAfterUse = true
+        }
     },
-    ['whiskey'] = {
+    ['whiskey']                     = {
         ['name'] = 'whiskey',
         ['label'] = 'Whiskey',
         ['weight'] = 500,
@@ -2671,30 +2717,30 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'For all the thirsty out there',
         ['client'] = {
-        status = {
-            thirst = 50000,
-        },
-        usetime = 5000,
-        anim = {
-            dict = 'mp_player_intdrink',
-            clip = 'loop_bottle'
-        },
-        prop = {
-            model = 'prop_cs_whiskey_bottle',
-            bone = 60309,
-            pos = vec3(0.000000, 0.000000, 0.000000),
-            rot = vec3(0.000000, 0.000000, 0.000000)
-        },
-        disable = {
-            move = false,
-            car = true,
-            mouse = false,
-            combat = true,
-        },
-        removeAfterUse = true
-    }
+            status = {
+                thirst = 50000,
+            },
+            usetime = 5000,
+            anim = {
+                dict = 'mp_player_intdrink',
+                clip = 'loop_bottle'
+            },
+            prop = {
+                model = 'prop_cs_whiskey_bottle',
+                bone = 60309,
+                pos = vec3(0.000000, 0.000000, 0.000000),
+                rot = vec3(0.000000, 0.000000, 0.000000)
+            },
+            disable = {
+                move = false,
+                car = true,
+                mouse = false,
+                combat = true,
+            },
+            removeAfterUse = true
+        }
     },
-    ['vodka'] = {
+    ['vodka']                       = {
         ['name'] = 'vodka',
         ['label'] = 'Vodka',
         ['weight'] = 500,
@@ -2711,30 +2757,30 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'For all the thirsty out there',
         ['client'] = {
-        status = {
-            thirst = 50000,
-        },
-        usetime = 5000,
-        anim = {
-            dict = 'mp_player_intdrink',
-            clip = 'loop_bottle'
-        },
-        prop = {
-            model = 'prop_vodka_bottle',
-            bone = 18905,
-            pos = vec3(0.000000, -0.260000, 0.100000),
-            rot = vec3(240.000000, -60.000000, 0.000000)
-        },
-        disable = {
-            move = false,
-            car = true,
-            mouse = false,
-            combat = true,
-        },
-        removeAfterUse = true
-    }
+            status = {
+                thirst = 50000,
+            },
+            usetime = 5000,
+            anim = {
+                dict = 'mp_player_intdrink',
+                clip = 'loop_bottle'
+            },
+            prop = {
+                model = 'prop_vodka_bottle',
+                bone = 18905,
+                pos = vec3(0.000000, -0.260000, 0.100000),
+                rot = vec3(240.000000, -60.000000, 0.000000)
+            },
+            disable = {
+                move = false,
+                car = true,
+                mouse = false,
+                combat = true,
+            },
+            removeAfterUse = true
+        }
     },
-    ['grape'] = {
+    ['grape']                       = {
         ['name'] = 'grape',
         ['label'] = 'Grape',
         ['weight'] = 100,
@@ -2750,7 +2796,7 @@ QBShared.Items = {
         ['object'] = 'prop_wine_rose',
         ['description'] = 'Mmmmh yummie, grapes'
     },
-    ['wine'] = {
+    ['wine']                        = {
         ['name'] = 'wine',
         ['label'] = 'Wine',
         ['weight'] = 300,
@@ -2767,30 +2813,30 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'Some good wine to drink on a fine evening',
         ['client'] = {
-        status = {
-            thirst = 50000,
-        },
-        usetime = 5000,
-        anim = {
-            dict = 'mp_player_intdrink',
-            clip = 'loop_bottle'
-        },
-        prop = {
-            model = 'prop_wine_red',
-            bone = 18905,
-            pos = vec3(0.000000, -0.260000, 0.100000),
-            rot = vec3(240.000000, -60.000000, 0.000000)
-        },
-        disable = {
-            move = false,
-            car = true,
-            mouse = false,
-            combat = true,
-        },
-        removeAfterUse = true
-    }
+            status = {
+                thirst = 50000,
+            },
+            usetime = 5000,
+            anim = {
+                dict = 'mp_player_intdrink',
+                clip = 'loop_bottle'
+            },
+            prop = {
+                model = 'prop_wine_red',
+                bone = 18905,
+                pos = vec3(0.000000, -0.260000, 0.100000),
+                rot = vec3(240.000000, -60.000000, 0.000000)
+            },
+            disable = {
+                move = false,
+                car = true,
+                mouse = false,
+                combat = true,
+            },
+            removeAfterUse = true
+        }
     },
-    ['grapejuice'] = {
+    ['grapejuice']                  = {
         ['name'] = 'grapejuice',
         ['label'] = 'Grape Juice',
         ['weight'] = 200,
@@ -2809,7 +2855,7 @@ QBShared.Items = {
     },
 
     -- Drugs
-    ['joint'] = {
+    ['joint']                       = {
         ['name'] = 'joint',
         ['label'] = 'Joint',
         ['weight'] = 0,
@@ -2826,27 +2872,27 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'Sidney would be very proud at you',
         ['client'] = {
-        usetime = 7500,
-        anim = {
-            dict = 'amb@world_human_smoking@male@male_a@enter',
-            clip = 'enter'
-        },
-        prop = {
-            model = 'p_cs_joint_02',
-            bone = 47419,
-            pos = vec3(0.015000, -0.009000, 0.003000),
-            rot = vec3(55.000000, 0.000000, 110.000000)
-        },
-        disable = {
-            move = false,
-            car = true,
-            mouse = false,
-            combat = true,
-        },
-        removeAfterUse = true
-    }
+            usetime = 7500,
+            anim = {
+                dict = 'amb@world_human_smoking@male@male_a@enter',
+                clip = 'enter'
+            },
+            prop = {
+                model = 'p_cs_joint_02',
+                bone = 47419,
+                pos = vec3(0.015000, -0.009000, 0.003000),
+                rot = vec3(55.000000, 0.000000, 110.000000)
+            },
+            disable = {
+                move = false,
+                car = true,
+                mouse = false,
+                combat = true,
+            },
+            removeAfterUse = true
+        }
     },
-    ['cokebaggy'] = {
+    ['cokebaggy']                   = {
         ['name'] = 'cokebaggy',
         ['label'] = 'Bag of Coke',
         ['weight'] = 0,
@@ -2860,7 +2906,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'To get happy real quick'
     },
-    ['crack_baggy'] = {
+    ['crack_baggy']                 = {
         ['name'] = 'crack_baggy',
         ['label'] = 'Bag of Crack',
         ['weight'] = 0,
@@ -2874,7 +2920,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'To get happy faster'
     },
-    ['xtcbaggy'] = {
+    ['xtcbaggy']                    = {
         ['name'] = 'xtcbaggy',
         ['label'] = 'Bag of XTC',
         ['weight'] = 0,
@@ -2888,7 +2934,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'Pop those pills baby'
     },
-    ['weed_brick'] = {
+    ['weed_brick']                  = {
         ['name'] = 'weed_brick',
         ['label'] = 'Weed Brick',
         ['weight'] = 1000,
@@ -2902,7 +2948,7 @@ QBShared.Items = {
         ['rare'] = 'legendary', -- epic, legendary, common
         ['description'] = '1KG Weed Brick to sell to large customers.'
     },
-    ['coke_brick'] = {
+    ['coke_brick']                  = {
         ['name'] = 'coke_brick',
         ['label'] = 'Coke Brick',
         ['weight'] = 1000,
@@ -2916,7 +2962,7 @@ QBShared.Items = {
         ['rare'] = 'legendary', -- epic, legendary, common
         ['description'] = 'Heavy package of cocaine, mostly used for deals and takes a lot of space'
     },
-    ['coke_small_brick'] = {
+    ['coke_small_brick']            = {
         ['name'] = 'coke_small_brick',
         ['label'] = 'Coke Package',
         ['weight'] = 350,
@@ -2930,7 +2976,7 @@ QBShared.Items = {
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'Small package of cocaine, mostly used for deals and takes a lot of space'
     },
-    ['oxy'] = {
+    ['oxy']                         = {
         ['name'] = 'oxy',
         ['label'] = 'Prescription Oxy',
         ['weight'] = 0,
@@ -2943,21 +2989,7 @@ QBShared.Items = {
         ['object'] = 'hei_prop_pill_bag_01',
         ['description'] = 'The Label Has Been Ripped Off'
     },
-    ['meth'] = {
-        ['name'] = 'meth',
-        ['label'] = 'Meth',
-        ['weight'] = 100,
-        ['type'] = 'item',
-        ['image'] = 'meth_tray.png',
-        ['unique'] = false,
-        ['useable'] = true,
-        ['shouldClose'] = true,
-        ['combinable'] = nil,
-        ['object'] = 'bkr_prop_meth_smallbag_01a',
-        ['rare'] = 'legendary', -- epic, legendary, common
-        ['description'] = 'A baggie of Meth'
-    },
-    ['rolling_paper'] = {
+    ['rolling_paper']               = {
         ['name'] = 'rolling_paper',
         ['label'] = 'Rolling Paper',
         ['weight'] = 0,
@@ -2981,7 +3013,7 @@ QBShared.Items = {
     },
 
     -- Seed And Weed
-    ['weed_white-widow'] = {
+    ['weed_white-widow']            = {
         ['name'] = 'weed_white-widow',
         ['label'] = 'White Widow 2g',
         ['weight'] = 200,
@@ -2995,7 +3027,7 @@ QBShared.Items = {
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'A weed bag with 2g White Widow'
     },
-    ['weed_skunk'] = {
+    ['weed_skunk']                  = {
         ['name'] = 'weed_skunk',
         ['label'] = 'Skunk 2g',
         ['weight'] = 200,
@@ -3009,7 +3041,7 @@ QBShared.Items = {
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'A weed bag with 2g Skunk'
     },
-    ['weed_purple-haze'] = {
+    ['weed_purple-haze']            = {
         ['name'] = 'weed_purple-haze',
         ['label'] = 'Purple Haze 2g',
         ['weight'] = 200,
@@ -3023,7 +3055,7 @@ QBShared.Items = {
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'A weed bag with 2g Purple Haze'
     },
-    ['weed_og-kush'] = {
+    ['weed_og-kush']                = {
         ['name'] = 'weed_og-kush',
         ['label'] = 'OGKush 2g',
         ['weight'] = 200,
@@ -3037,7 +3069,7 @@ QBShared.Items = {
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'A weed bag with 2g OG Kush'
     },
-    ['weed_amnesia'] = {
+    ['weed_amnesia']                = {
         ['name'] = 'weed_amnesia',
         ['label'] = 'Amnesia 2g',
         ['weight'] = 200,
@@ -3051,7 +3083,7 @@ QBShared.Items = {
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'A weed bag with 2g Amnesia'
     },
-    ['weed_ak47'] = {
+    ['weed_ak47']                   = {
         ['name'] = 'weed_ak47',
         ['label'] = 'AK47 2g',
         ['weight'] = 200,
@@ -3065,7 +3097,7 @@ QBShared.Items = {
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'A weed bag with 2g AK47'
     },
-    ['weed_white-widow_seed'] = {
+    ['weed_white-widow_seed']       = {
         ['name'] = 'weed_white-widow_seed',
         ['label'] = 'White Widow Seed',
         ['weight'] = 0,
@@ -3078,7 +3110,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'A weed seed of White Widow'
     },
-    ['weed_skunk_seed'] = {
+    ['weed_skunk_seed']             = {
         ['name'] = 'weed_skunk_seed',
         ['label'] = 'Skunk Seed',
         ['weight'] = 0,
@@ -3091,7 +3123,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'A weed seed of Skunk'
     },
-    ['weed_purple-haze_seed'] = {
+    ['weed_purple-haze_seed']       = {
         ['name'] = 'weed_purple-haze_seed',
         ['label'] = 'Purple Haze Seed',
         ['weight'] = 0,
@@ -3104,7 +3136,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'A weed seed of Purple Haze'
     },
-    ['weed_og-kush_seed'] = {
+    ['weed_og-kush_seed']           = {
         ['name'] = 'weed_og-kush_seed',
         ['label'] = 'OGKush Seed',
         ['weight'] = 0,
@@ -3117,7 +3149,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'A weed seed of OG Kush'
     },
-    ['weed_amnesia_seed'] = {
+    ['weed_amnesia_seed']           = {
         ['name'] = 'weed_amnesia_seed',
         ['label'] = 'Amnesia Seed',
         ['weight'] = 0,
@@ -3130,7 +3162,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'A weed seed of Amnesia'
     },
-    ['weed_ak47_seed'] = {
+    ['weed_ak47_seed']              = {
         ['name'] = 'weed_ak47_seed',
         ['label'] = 'AK47 Seed',
         ['weight'] = 0,
@@ -3143,7 +3175,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'A weed seed of AK47'
     },
-    ['empty_weed_bag'] = {
+    ['empty_weed_bag']              = {
         ['name'] = 'empty_weed_bag',
         ['label'] = 'Empty Weed Bag',
         ['weight'] = 0,
@@ -3155,7 +3187,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'A small empty bag'
     },
-    ['weed_nutrition'] = {
+    ['weed_nutrition']              = {
         ['name'] = 'weed_nutrition',
         ['label'] = 'Plant Fertilizer',
         ['weight'] = 2000,
@@ -3170,7 +3202,7 @@ QBShared.Items = {
     },
 
     -- Material
-    ['plastic'] = {
+    ['plastic']                     = {
         ['name'] = 'plastic',
         ['label'] = 'Plastic',
         ['weight'] = 100,
@@ -3183,7 +3215,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'RECYCLE! - Greta Thunberg 2019'
     },
-    ['metalscrap'] = {
+    ['metalscrap']                  = {
         ['name'] = 'metalscrap',
         ['label'] = 'Metal Scrap',
         ['weight'] = 100,
@@ -3196,7 +3228,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'You can probably make something nice out of this'
     },
-    ['copper'] = {
+    ['copper']                      = {
         ['name'] = 'copper',
         ['label'] = 'Copper',
         ['weight'] = 100,
@@ -3209,7 +3241,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'Nice piece of metal that you can probably use for something'
     },
-    ['aluminum'] = {
+    ['aluminum']                    = {
         ['name'] = 'aluminum',
         ['label'] = 'Aluminium',
         ['weight'] = 100,
@@ -3222,7 +3254,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'Nice piece of metal that you can probably use for something'
     },
-    ['aluminumoxide'] = {
+    ['aluminumoxide']               = {
         ['name'] = 'aluminumoxide',
         ['label'] = 'Aluminium Powder',
         ['weight'] = 100,
@@ -3235,7 +3267,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'Some powder to mix with'
     },
-    ['iron'] = {
+    ['iron']                        = {
         ['name'] = 'iron',
         ['label'] = 'Iron',
         ['weight'] = 100,
@@ -3248,7 +3280,7 @@ QBShared.Items = {
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'Handy piece of metal that you can probably use for something'
     },
-    ['ironoxide'] = {
+    ['ironoxide']                   = {
         ['name'] = 'ironoxide',
         ['label'] = 'Iron Powder',
         ['weight'] = 100,
@@ -3270,7 +3302,7 @@ QBShared.Items = {
         },
         ['description'] = 'Some powder to mix with.'
     },
-    ['steel'] = {
+    ['steel']                       = {
         ['name'] = 'steel',
         ['label'] = 'Steel',
         ['weight'] = 100,
@@ -3283,7 +3315,7 @@ QBShared.Items = {
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'Nice piece of metal that you can probably use for something'
     },
-    ['rubber'] = {
+    ['rubber']                      = {
         ['name'] = 'rubber',
         ['label'] = 'Rubber',
         ['weight'] = 100,
@@ -3296,7 +3328,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'Rubber, I believe you can make your own rubber ducky with it :D'
     },
-    ['glass'] = {
+    ['glass']                       = {
         ['name'] = 'glass',
         ['label'] = 'Glass',
         ['weight'] = 100,
@@ -3309,7 +3341,20 @@ QBShared.Items = {
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'It is very fragile, watch out'
     },
-    ['chain'] = {
+    ['motelkey']                    = {
+        ['name'] = 'motelkey',
+        ['label'] = 'Motel Key',
+        ['weight'] = 100,
+        ['type'] = 'item',
+        ['image'] = 'motelkey.png',
+        ['unique'] = true,
+        ['useable'] = true,
+        ['shouldClose'] = false,
+        ['combinable'] = nil,
+        ['rare'] = 'epic', -- epic, legendary, common
+        ['description'] = 'Damn you lost your key again?'
+    },
+    ['chain']                       = {
         ['name'] = 'chain',
         ['label'] = 'Chain',
         ['weight'] = 100,
@@ -3322,7 +3367,33 @@ QBShared.Items = {
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'It is very fragile, watch out'
     },
-    ['watch'] = {
+    ['vest']                        = {
+        ['name'] = 'vest',
+        ['label'] = 'Vest',
+        ['weight'] = 100,
+        ['type'] = 'item',
+        ['image'] = 'vest.png',
+        ['unique'] = true,
+        ['useable'] = true,
+        ['shouldClose'] = false,
+        ['combinable'] = nil,
+        ['rare'] = 'epic', -- epic, legendary, common
+        ['description'] = 'Body Armor'
+    },
+    ['bracelets']                   = {
+        ['name'] = 'bracelets',
+        ['label'] = 'Bracelets',
+        ['weight'] = 100,
+        ['type'] = 'item',
+        ['image'] = 'bracelets.png',
+        ['unique'] = true,
+        ['useable'] = true,
+        ['shouldClose'] = false,
+        ['combinable'] = nil,
+        ['rare'] = 'epic', -- epic, legendary, common
+        ['description'] = 'It is very fragile, watch out'
+    },
+    ['watch']                       = {
         ['name'] = 'watch',
         ['label'] = 'Watch',
         ['weight'] = 100,
@@ -3337,7 +3408,7 @@ QBShared.Items = {
     },
 
     -- Tools
-    ['lockpick'] = {
+    ['lockpick']                    = {
         ['name'] = 'lockpick',
         ['label'] = 'Lockpick',
         ['weight'] = 300,
@@ -3359,7 +3430,7 @@ QBShared.Items = {
         },
         ['description'] = 'Very useful if you lose your keys a lot.. or if you want to use it for something else...'
     },
-    ['advancedlockpick'] = {
+    ['advancedlockpick']            = {
         ['name'] = 'advancedlockpick',
         ['label'] = 'Advanced Lockpick',
         ['weight'] = 500,
@@ -3372,7 +3443,7 @@ QBShared.Items = {
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'If you lose your keys a lot this is very useful... Also useful to open your beers'
     },
-    ['electronickit'] = {
+    ['electronickit']               = {
         ['name'] = 'electronickit',
         ['label'] = 'Electronic Kit',
         ['weight'] = 100,
@@ -3385,7 +3456,7 @@ QBShared.Items = {
         ['combinable'] = { accept = { 'gatecrack' }, reward = 'trojan_usb', anim = nil },
         ['description'] = "If you've always wanted to build a robot you can maybe start here. Maybe you'll be the new Elon Musk?"
     },
-    ['gatecrack'] = {
+    ['gatecrack']                   = {
         ['name'] = 'gatecrack',
         ['label'] = 'Gatecrack',
         ['weight'] = 0,
@@ -3398,7 +3469,7 @@ QBShared.Items = {
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'Handy software to tear down some fences'
     },
-    ['thermite'] = {
+    ['thermite']                    = {
         ['name'] = 'thermite',
         ['label'] = 'Thermite',
         ['weight'] = 1000,
@@ -3411,7 +3482,7 @@ QBShared.Items = {
         ['rare'] = 'legendary', -- epic, legendary, common
         ['description'] = "Sometimes you'd wish for everything to burn"
     },
-    ['trojan_usb'] = {
+    ['trojan_usb']                  = {
         ['name'] = 'trojan_usb',
         ['label'] = 'Trojan USB',
         ['weight'] = 0,
@@ -3424,7 +3495,7 @@ QBShared.Items = {
         ['rare'] = 'legendary', -- epic, legendary, common
         ['description'] = 'Handy software to shut down some systems'
     },
-    ['screwdriverset'] = {
+    ['screwdriverset']              = {
         ['name'] = 'screwdriverset',
         ['label'] = 'Toolkit',
         ['weight'] = 1000,
@@ -3437,7 +3508,7 @@ QBShared.Items = {
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'Very useful to screw... screws...'
     },
-    ['drill'] = {
+    ['drill']                       = {
         ['name'] = 'drill',
         ['label'] = 'Drill',
         ['weight'] = 20000,
@@ -3450,7 +3521,7 @@ QBShared.Items = {
         ['rare'] = 'legendary', -- epic, legendary, common
         ['description'] = 'The real deal...'
     },
-    ['phone_dongle'] = {
+    ['phone_dongle']                = {
         ['name'] = 'phone_dongle',
         ['label'] = 'Phone Dongle',
         ['weight'] = 50,
@@ -3463,7 +3534,7 @@ QBShared.Items = {
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'Telephone key to make a bypass, maybe...'
     },
-    ['powerbank'] = {
+    ['powerbank']                   = {
         ['name'] = 'powerbank',
         ['label'] = 'Power Bank',
         ['weight'] = 50,
@@ -3477,7 +3548,7 @@ QBShared.Items = {
     },
 
     -- Vehicle Tools
-    ['nitrous'] = {
+    ['nitrous']                     = {
         ['name'] = 'nitrous',
         ['label'] = 'Nitrous',
         ['weight'] = 1000,
@@ -3490,7 +3561,7 @@ QBShared.Items = {
         ['rare'] = 'legendary', -- epic, legendary, common
         ['description'] = 'Speed up, gas pedal! :D'
     },
-    ['repairkit'] = {
+    ['repairkit']                   = {
         ['name'] = 'repairkit',
         ['label'] = 'Repairkit',
         ['weight'] = 2500,
@@ -3502,7 +3573,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'A nice toolbox with stuff to repair your vehicle'
     },
-    ['advancedrepairkit'] = {
+    ['advancedrepairkit']           = {
         ['name'] = 'advancedrepairkit',
         ['label'] = 'Advanced Repairkit',
         ['weight'] = 4000,
@@ -3515,7 +3586,7 @@ QBShared.Items = {
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'A nice toolbox with stuff to repair your vehicle'
     },
-    ['weapon_repairkit'] = {
+    ['weapon_repairkit']            = {
         ['name'] = 'weapon_repairkit',
         ['label'] = 'Weapon Repairkit',
         ['weight'] = 4000,
@@ -3528,7 +3599,7 @@ QBShared.Items = {
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'A nice toolbox with stuff to repair your weapon'
     },
-    ['cleaningkit'] = {
+    ['cleaningkit']                 = {
         ['name'] = 'cleaningkit',
         ['label'] = 'Cleaning Kit',
         ['weight'] = 250,
@@ -3540,7 +3611,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'A microfiber cloth with some soap will let your car sparkle again!'
     },
-    ['harness'] = {
+    ['harness']                     = {
         ['name'] = 'harness',
         ['label'] = 'Race Harness',
         ['weight'] = 1000,
@@ -3553,7 +3624,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'Racing Harness so no matter what you stay in the car'
     },
-    ['jerry_can'] = {
+    ['jerry_can']                   = {
         ['name'] = 'jerry_can',
         ['label'] = 'Jerrycan 20L',
         ['weight'] = 20000,
@@ -3568,7 +3639,7 @@ QBShared.Items = {
     },
 
     -- Medication
-    ['firstaid'] = {
+    ['firstaid']                    = {
         ['name'] = 'firstaid',
         ['label'] = 'First Aid',
         ['weight'] = 2500,
@@ -3580,7 +3651,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'You can use this First Aid kit to get people back on their feet'
     },
-    ['bandage'] = {
+    ['bandage']                     = {
         ['name'] = 'bandage',
         ['label'] = 'Bandage',
         ['weight'] = 0,
@@ -3593,7 +3664,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'A bandage works every time'
     },
-    ['ifaks'] = {
+    ['ifaks']                       = {
         ['name'] = 'ifaks',
         ['label'] = 'ifaks',
         ['weight'] = 200,
@@ -3605,7 +3676,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'ifaks for healing and a complete stress remover.'
     },
-    ['painkillers'] = {
+    ['painkillers']                 = {
         ['name'] = 'painkillers',
         ['label'] = 'Painkillers',
         ['weight'] = 0,
@@ -3618,7 +3689,7 @@ QBShared.Items = {
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = "For pain you can't stand anymore, take this pill that'd make you feel great again"
     },
-    ['walkstick'] = {
+    ['walkstick']                   = {
         ['name'] = 'walkstick',
         ['label'] = 'Walking Stick',
         ['weight'] = 1000,
@@ -3633,7 +3704,7 @@ QBShared.Items = {
     },
 
     -- Communication
-    ['phone'] = {
+    ['phone']                       = {
         ['name'] = 'phone',
         ['label'] = 'Classic Phone',
         ['weight'] = 150,
@@ -3644,10 +3715,11 @@ QBShared.Items = {
         ['shouldClose'] = true,
         ['combinable'] = nil,
         ['object'] = 'prop_amb_phone',
+        ['useableIn'] = 'hotbar',
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'They say that Quasar Smartphone is the same as an iPhone, what do you think?'
     },
-    ['black_phone'] = {
+    ['black_phone']                 = {
         ['name'] = 'black_phone',
         ['label'] = 'Black Phone',
         ['weight'] = 150,
@@ -3658,10 +3730,11 @@ QBShared.Items = {
         ['shouldClose'] = true,
         ['combinable'] = nil,
         ['object'] = 'prop_amb_phone',
+        ['useableIn'] = 'hotbar',
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'They say that Quasar Smartphone is the same as an iPhone, what do you think?'
     },
-    ['yellow_phone'] = {
+    ['yellow_phone']                = {
         ['name'] = 'yellow_phone',
         ['label'] = 'Yellow Phone',
         ['weight'] = 150,
@@ -3672,10 +3745,11 @@ QBShared.Items = {
         ['shouldClose'] = true,
         ['combinable'] = nil,
         ['object'] = 'prop_amb_phone',
+        ['useableIn'] = 'hotbar',
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'They say that Quasar Smartphone is the same as an iPhone, what do you think?'
     },
-    ['red_phone'] = {
+    ['red_phone']                   = {
         ['name'] = 'red_phone',
         ['label'] = 'Red Phone',
         ['weight'] = 150,
@@ -3686,10 +3760,11 @@ QBShared.Items = {
         ['shouldClose'] = true,
         ['combinable'] = nil,
         ['object'] = 'prop_amb_phone',
+        ['useableIn'] = 'hotbar',
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'They say that Quasar Smartphone is the same as an iPhone, what do you think?'
     },
-    ['green_phone'] = {
+    ['green_phone']                 = {
         ['name'] = 'green_phone',
         ['label'] = 'Green Phone',
         ['weight'] = 150,
@@ -3700,10 +3775,11 @@ QBShared.Items = {
         ['shouldClose'] = true,
         ['combinable'] = nil,
         ['object'] = 'prop_amb_phone',
+        ['useableIn'] = 'hotbar',
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'They say that Quasar Smartphone is the same as an iPhone, what do you think?'
     },
-    ['white_phone'] = {
+    ['white_phone']                 = {
         ['name'] = 'white_phone',
         ['label'] = 'White Phone',
         ['weight'] = 150,
@@ -3714,10 +3790,11 @@ QBShared.Items = {
         ['shouldClose'] = true,
         ['combinable'] = nil,
         ['object'] = 'prop_amb_phone',
+        ['useableIn'] = 'hotbar',
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'They say that Quasar Smartphone is the same as an iPhone, what do you think?'
     },
-    ['radio'] = {
+    ['radio']                       = {
         ['name'] = 'radio',
         ['label'] = 'Radio',
         ['weight'] = 2000,
@@ -3730,7 +3807,7 @@ QBShared.Items = {
         ['object'] = 'prop_cs_hand_radio',
         ['description'] = 'You can communicate with this through a signal'
     },
-    ['iphone'] = {
+    ['iphone']                      = {
         ['name'] = 'iphone',
         ['label'] = 'iPhone',
         ['weight'] = 1000,
@@ -3743,7 +3820,7 @@ QBShared.Items = {
         ['object'] = 'prop_amb_phone',
         ['description'] = 'Very expensive phone'
     },
-    ['samsungphone'] = {
+    ['samsungphone']                = {
         ['name'] = 'samsungphone',
         ['label'] = 'Samsung S10',
         ['weight'] = 1000,
@@ -3756,7 +3833,7 @@ QBShared.Items = {
         ['object'] = 'prop_amb_phone',
         ['description'] = 'Very expensive phone'
     },
-    ['laptop'] = {
+    ['laptop']                      = {
         ['name'] = 'laptop',
         ['label'] = 'Laptop',
         ['weight'] = 4000,
@@ -3770,7 +3847,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'Expensive laptop'
     },
-    ['tablet'] = {
+    ['tablet']                      = {
         ['name'] = 'tablet',
         ['label'] = 'Tablet',
         ['weight'] = 2000,
@@ -3784,7 +3861,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'Expensive tablet'
     },
-    ['radioscanner'] = {
+    ['radioscanner']                = {
         ['name'] = 'radioscanner',
         ['label'] = 'Radio Scanner',
         ['weight'] = 1000,
@@ -3796,7 +3873,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'With this you can get some police alerts. Not 100% effective however'
     },
-    ['pinger'] = {
+    ['pinger']                      = {
         ['name'] = 'pinger',
         ['label'] = 'Pinger',
         ['weight'] = 1000,
@@ -3808,22 +3885,8 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'With a pinger and your phone you can send out your location'
     },
-    ['cryptostick'] = {
-        ['name'] = 'cryptostick',
-        ['label'] = 'Crypto Stick',
-        ['weight'] = 200,
-        ['type'] = 'item',
-        ['image'] = 'cryptostick.png',
-        ['unique'] = true,
-        ['useable'] = true,
-        ['shouldClose'] = true,
-        ['combinable'] = nil,
-        ['rare'] = 'epic', -- epic, legendary, common
-        ['description'] = "Why would someone ever buy money that doesn't exist.. How many would it contain..?"
-    },
-
     -- Theft and Jewelry
-    ['rolex'] = {
+    ['rolex']                       = {
         ['name'] = 'rolex',
         ['label'] = 'Golden Watch',
         ['weight'] = 1500,
@@ -3836,7 +3899,7 @@ QBShared.Items = {
         ['rare'] = 'legendary', -- epic, legendary, common
         ['description'] = 'A golden watch seems like the jackpot to me!'
     },
-    ['diamond_ring'] = {
+    ['diamond_ring']                = {
         ['name'] = 'diamond_ring',
         ['label'] = 'Diamond Ring',
         ['weight'] = 1500,
@@ -3849,7 +3912,7 @@ QBShared.Items = {
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'A diamond ring seems like the jackpot to me!'
     },
-    ['diamond'] = {
+    ['diamond']                     = {
         ['name'] = 'diamond',
         ['label'] = 'Diamond',
         ['weight'] = 1000,
@@ -3862,7 +3925,7 @@ QBShared.Items = {
         ['rare'] = 'legendary', -- epic, legendary, common
         ['description'] = 'A diamond seems like the jackpot to me!'
     },
-    ['goldchain'] = {
+    ['goldchain']                   = {
         ['name'] = 'goldchain',
         ['label'] = 'Golden Chain',
         ['weight'] = 1500,
@@ -3875,7 +3938,7 @@ QBShared.Items = {
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'A golden chain seems like the jackpot to me!'
     },
-    ['10kgoldchain'] = {
+    ['10kgoldchain']                = {
         ['name'] = '10kgoldchain',
         ['label'] = '10k Gold Chain',
         ['weight'] = 2000,
@@ -3888,7 +3951,7 @@ QBShared.Items = {
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = '10 carat golden chain'
     },
-    ['goldbar'] = {
+    ['goldbar']                     = {
         ['name'] = 'goldbar',
         ['label'] = 'Gold Bar',
         ['weight'] = 7000,
@@ -3901,7 +3964,7 @@ QBShared.Items = {
         ['rare'] = 'legendary', -- epic, legendary, common
         ['description'] = 'Looks pretty expensive to me'
     },
-    ['small_tv'] = {
+    ['small_tv']                    = {
         ['name'] = 'small_tv',
         ['label'] = 'Small TV',
         ['weight'] = 30000,
@@ -3914,7 +3977,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'TV'
     },
-    ['toaster'] = {
+    ['toaster']                     = {
         ['name'] = 'toaster',
         ['label'] = 'Toaster',
         ['weight'] = 18000,
@@ -3927,7 +3990,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'Toast'
     },
-    ['microwave'] = {
+    ['microwave']                   = {
         ['name'] = 'microwave',
         ['label'] = 'Microwave',
         ['weight'] = 46000,
@@ -3942,7 +4005,7 @@ QBShared.Items = {
     },
 
     -- Cops Tools
-    ['armor'] = {
+    ['armor']                       = {
         ['name'] = 'armor',
         ['label'] = 'Armor',
         ['weight'] = 5000,
@@ -3955,7 +4018,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = "Some protection won't hurt... right?"
     },
-    ['heavyarmor'] = {
+    ['heavyarmor']                  = {
         ['name'] = 'heavyarmor',
         ['label'] = 'Heavy Armor',
         ['weight'] = 5000,
@@ -3968,7 +4031,7 @@ QBShared.Items = {
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = "Some protection won't hurt... right?"
     },
-    ['handcuffs'] = {
+    ['handcuffs']                   = {
         ['name'] = 'handcuffs',
         ['label'] = 'Handcuffs',
         ['weight'] = 100,
@@ -3981,7 +4044,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'Comes in handy when people misbehave. Maybe it can be used for something else?'
     },
-    ['police_stormram'] = {
+    ['police_stormram']             = {
         ['name'] = 'police_stormram',
         ['label'] = 'Stormram',
         ['weight'] = 18000,
@@ -3994,7 +4057,7 @@ QBShared.Items = {
         ['rare'] = 'legendary', -- epic, legendary, common
         ['description'] = 'A nice tool to break into doors'
     },
-    ['empty_evidence_bag'] = {
+    ['empty_evidence_bag']          = {
         ['name'] = 'empty_evidence_bag',
         ['label'] = 'Empty Evidence Bag',
         ['weight'] = 0,
@@ -4007,7 +4070,7 @@ QBShared.Items = {
         ['object'] = 'prop_paper_bag_01',
         ['description'] = 'Used a lot to keep DNA from blood, bullet shells and more'
     },
-    ['filled_evidence_bag'] = {
+    ['filled_evidence_bag']         = {
         ['name'] = 'filled_evidence_bag',
         ['label'] = 'Evidence Bag',
         ['weight'] = 200,
@@ -4023,7 +4086,7 @@ QBShared.Items = {
     },
 
     -- Firework Tools
-    ['firework1'] = {
+    ['firework1']                   = {
         ['name'] = 'firework1',
         ['label'] = '2Brothers',
         ['weight'] = 1000,
@@ -4036,7 +4099,7 @@ QBShared.Items = {
         ['object'] = 'ind_prop_firework_01',
         ['description'] = 'Fireworks'
     },
-    ['firework2'] = {
+    ['firework2']                   = {
         ['name'] = 'firework2',
         ['label'] = 'Poppelers',
         ['weight'] = 1000,
@@ -4049,7 +4112,7 @@ QBShared.Items = {
         ['object'] = 'ind_prop_firework_01',
         ['description'] = 'Fireworks'
     },
-    ['firework3'] = {
+    ['firework3']                   = {
         ['name'] = 'firework3',
         ['label'] = 'WipeOut',
         ['weight'] = 1000,
@@ -4062,7 +4125,7 @@ QBShared.Items = {
         ['object'] = 'ind_prop_firework_01',
         ['description'] = 'Fireworks'
     },
-    ['firework4'] = {
+    ['firework4']                   = {
         ['name'] = 'firework4',
         ['label'] = 'Weeping Willow',
         ['weight'] = 1000,
@@ -4077,7 +4140,7 @@ QBShared.Items = {
     },
 
     -- Sea Tools
-    ['dendrogyra_coral'] = {
+    ['dendrogyra_coral']            = {
         ['name'] = 'dendrogyra_coral',
         ['label'] = 'Dendrogyra',
         ['weight'] = 1000,
@@ -4090,7 +4153,7 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'Its also known as pillar coral'
     },
-    ['antipatharia_coral'] = {
+    ['antipatharia_coral']          = {
         ['name'] = 'antipatharia_coral',
         ['label'] = 'Antipatharia',
         ['weight'] = 1000,
@@ -4103,7 +4166,7 @@ QBShared.Items = {
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'Its also known as black corals or thorn corals'
     },
-    ['diving_gear'] = {
+    ['diving_gear']                 = {
         ['name'] = 'diving_gear',
         ['label'] = 'Diving Gear',
         ['weight'] = 30000,
@@ -4115,7 +4178,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'An oxygen tank and a rebreather'
     },
-    ['diving_fill'] = {
+    ['diving_fill']                 = {
         ['name'] = 'diving_fill',
         ['label'] = 'Diving Tube',
         ['weight'] = 3000,
@@ -4129,7 +4192,7 @@ QBShared.Items = {
     },
 
     -- Other Tools
-    ['money'] = {
+    ['money']                       = {
         ['name'] = 'money',
         ['label'] = 'Money',
         ['weight'] = 0,
@@ -4141,7 +4204,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'Cash'
     },
-    ['black_money'] = {
+    ['black_money']                 = {
         ['name'] = 'black_money',
         ['label'] = 'Black Money',
         ['weight'] = 0,
@@ -4153,7 +4216,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'Black Money'
     },
-    ['casinochips'] = {
+    ['casinochips']                 = {
         ['name'] = 'casinochips',
         ['label'] = 'Casino Chips',
         ['weight'] = 0,
@@ -4165,7 +4228,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'Chips For Casino Gambling'
     },
-    ['stickynote'] = {
+    ['stickynote']                  = {
         ['name'] = 'stickynote',
         ['label'] = 'Sticky note',
         ['weight'] = 0,
@@ -4177,7 +4240,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'Sometimes handy to remember something :)'
     },
-    ['moneybag'] = {
+    ['moneybag']                    = {
         ['name'] = 'moneybag',
         ['label'] = 'Money Bag',
         ['weight'] = 0,
@@ -4190,19 +4253,19 @@ QBShared.Items = {
         ['rare'] = 'common', -- epic, legendary, common
         ['description'] = 'A bag with cash'
     },
-    ['parachute'] = {
+    ['parachute']                   = {
         ['name'] = 'parachute',
         ['label'] = 'Parachute',
-        ['weight'] = 30000,
+        ['weight'] = 200,
         ['type'] = 'item',
         ['image'] = 'parachute.png',
         ['unique'] = true,
         ['useable'] = true,
-        ['shouldClose'] = true,
+        ['shouldClose'] = false,
         ['combinable'] = nil,
-        ['description'] = 'The sky is the limit! Woohoo!'
+        ['description'] = 'A standard parachute to ensure a safe landing.',
     },
-    ['binoculars'] = {
+    ['binoculars']                  = {
         ['name'] = 'binoculars',
         ['label'] = 'Binoculars',
         ['weight'] = 600,
@@ -4214,7 +4277,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'Sneaky Breaky...'
     },
-    ['cigarettebox'] = {
+    ['cigarettebox']                = {
         ['name'] = 'cigarettebox',
         ['label'] = 'Cigarette Box',
         ['weight'] = 5,
@@ -4226,7 +4289,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'Open it, there will be 20 cigarettes inside'
     },
-    ['cigarette'] = {
+    ['cigarette']                   = {
         ['name'] = 'cigarette',
         ['label'] = 'Cigarette',
         ['weight'] = 1,
@@ -4238,7 +4301,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'A cigar, a simple cigarette...'
     },
-    ['lighter'] = {
+    ['lighter']                     = {
         ['name'] = 'lighter',
         ['label'] = 'Lighter',
         ['weight'] = 0,
@@ -4250,7 +4313,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'On new years eve a nice fire to stand next to'
     },
-    ['certificate'] = {
+    ['certificate']                 = {
         ['name'] = 'certificate',
         ['label'] = 'Certificate',
         ['weight'] = 0,
@@ -4262,7 +4325,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'Certificate that proves you own certain stuff'
     },
-    ['markedbills'] = {
+    ['markedbills']                 = {
         ['name'] = 'markedbills',
         ['label'] = 'Marked Money',
         ['weight'] = 1000,
@@ -4275,7 +4338,7 @@ QBShared.Items = {
         ['rare'] = 'epic', -- epic, legendary, common
         ['description'] = 'Money?'
     },
-    ['labkey'] = {
+    ['labkey']                      = {
         ['name'] = 'labkey',
         ['label'] = 'Key',
         ['weight'] = 500,
@@ -4288,7 +4351,7 @@ QBShared.Items = {
         ['rare'] = 'legendary', -- epic, legendary, common
         ['description'] = 'Key for a lock...?'
     },
-    ['printerdocument'] = {
+    ['printerdocument']             = {
         ['name'] = 'printerdocument',
         ['label'] = 'Document',
         ['weight'] = 500,
@@ -4302,7 +4365,7 @@ QBShared.Items = {
     },
 
     -- Backpack
-    ['backpack'] = {
+    ['backpack']                    = {
         ['name'] = 'backpack',
         ['label'] = 'Backpack',
         ['weight'] = 0,
@@ -4314,7 +4377,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'No have'
     },
-    ['backpack2'] = {
+    ['backpack2']                   = {
         ['name'] = 'backpack2',
         ['label'] = 'backpack2',
         ['weight'] = 0,
@@ -4326,7 +4389,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'No have'
     },
-    ['briefcase'] = {
+    ['briefcase']                   = {
         ['name'] = 'briefcase',
         ['label'] = 'briefcase',
         ['weight'] = 0,
@@ -4338,7 +4401,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'No have'
     },
-    ['paramedicbag'] = {
+    ['paramedicbag']                = {
         ['name'] = 'paramedicbag',
         ['label'] = 'paramedicbag',
         ['weight'] = 0,
@@ -4352,7 +4415,7 @@ QBShared.Items = {
     },
 
     -- Coal Items
-    ['coal_ore'] = {
+    ['coal_ore']                    = {
         ['name'] = 'coal_ore',
         ['label'] = 'Coal Ore',
         ['weight'] = 250,
@@ -4364,7 +4427,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'A piece of coal ore.'
     },
-    ['flint'] = {
+    ['flint']                       = {
         ['name'] = 'flint',
         ['label'] = 'Flint',
         ['weight'] = 150,
@@ -4376,7 +4439,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'A sharp piece of flint.'
     },
-    ['sulfur_chunk'] = {
+    ['sulfur_chunk']                = {
         ['name'] = 'sulfur_chunk',
         ['label'] = 'Sulfur Chunk',
         ['weight'] = 200,
@@ -4390,7 +4453,7 @@ QBShared.Items = {
     },
 
     -- Gold Items
-    ['gold_nugget'] = {
+    ['gold_nugget']                 = {
         ['name'] = 'gold_nugget',
         ['label'] = 'Gold Nugget',
         ['weight'] = 250,
@@ -4402,7 +4465,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'A small nugget of gold.'
     },
-    ['gold_dust'] = {
+    ['gold_dust']                   = {
         ['name'] = 'gold_dust',
         ['label'] = 'Gold Dust',
         ['weight'] = 150,
@@ -4414,7 +4477,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'A pinch of gold dust.'
     },
-    ['quartz_crystal'] = {
+    ['quartz_crystal']              = {
         ['name'] = 'quartz_crystal',
         ['label'] = 'Quartz Crystal',
         ['weight'] = 200,
@@ -4427,7 +4490,7 @@ QBShared.Items = {
         ['description'] = 'A clear quartz crystal.'
     },
     -- Emerald Items
-    ['emerald_crystal'] = {
+    ['emerald_crystal']             = {
         ['name'] = 'emerald_crystal',
         ['label'] = 'Emerald Crystal',
         ['weight'] = 250,
@@ -4439,7 +4502,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'A radiant emerald crystal.'
     },
-    ['beryl_chunk'] = {
+    ['beryl_chunk']                 = {
         ['name'] = 'beryl_chunk',
         ['label'] = 'Beryl Chunk',
         ['weight'] = 200,
@@ -4451,7 +4514,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'A chunk of beryl.'
     },
-    ['green_garnet'] = {
+    ['green_garnet']                = {
         ['name'] = 'green_garnet',
         ['label'] = 'Green Garnet',
         ['weight'] = 150,
@@ -4465,7 +4528,7 @@ QBShared.Items = {
     },
 
     -- Ruby Items
-    ['ruby_crystal'] = {
+    ['ruby_crystal']                = {
         ['name'] = 'ruby_crystal',
         ['label'] = 'Ruby Crystal',
         ['weight'] = 250,
@@ -4477,7 +4540,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'A brilliant ruby crystal.'
     },
-    ['corundum_chunk'] = {
+    ['corundum_chunk']              = {
         ['name'] = 'corundum_chunk',
         ['label'] = 'Corundum Chunk',
         ['weight'] = 200,
@@ -4489,7 +4552,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'A chunk of corundum.'
     },
-    ['pink_sapphire'] = {
+    ['pink_sapphire']               = {
         ['name'] = 'pink_sapphire',
         ['label'] = 'Pink Sapphire',
         ['weight'] = 150,
@@ -4503,7 +4566,7 @@ QBShared.Items = {
     },
 
     -- Amethyst Items
-    ['amethyst_geode'] = {
+    ['amethyst_geode']              = {
         ['name'] = 'amethyst_geode',
         ['label'] = 'Amethyst Geode',
         ['weight'] = 250,
@@ -4515,7 +4578,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'A beautiful amethyst geode.'
     },
-    ['purple_quartz'] = {
+    ['purple_quartz']               = {
         ['name'] = 'purple_quartz',
         ['label'] = 'Purple Quartz',
         ['weight'] = 200,
@@ -4527,7 +4590,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'A piece of purple quartz.'
     },
-    ['clear_crystal'] = {
+    ['clear_crystal']               = {
         ['name'] = 'clear_crystal',
         ['label'] = 'Clear Crystal',
         ['weight'] = 150,
@@ -4541,7 +4604,7 @@ QBShared.Items = {
     },
 
     -- Diamond Items
-    ['diamond_crystal'] = {
+    ['diamond_crystal']             = {
         ['name'] = 'diamond_crystal',
         ['label'] = 'Diamond Crystal',
         ['weight'] = 250,
@@ -4553,7 +4616,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'An exquisite diamond crystal.'
     },
-    ['graphite_chunk'] = {
+    ['graphite_chunk']              = {
         ['name'] = 'graphite_chunk',
         ['label'] = 'Graphite Chunk',
         ['weight'] = 200,
@@ -4565,7 +4628,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'A chunk of graphite.'
     },
-    ['blue_diamond'] = {
+    ['blue_diamond']                = {
         ['name'] = 'blue_diamond',
         ['label'] = 'Blue Diamond',
         ['weight'] = 150,
@@ -4579,7 +4642,7 @@ QBShared.Items = {
     },
 
     -- Clothes
-    ['tshirt'] = {
+    ['tshirt']                      = {
         ['name'] = 'tshirt',
         ['label'] = 'T-shirt',
         ['weight'] = 0,
@@ -4591,7 +4654,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'A nice piece of clothing'
     },
-    ['torso'] = {
+    ['torso']                       = {
         ['name'] = 'torso',
         ['label'] = 'Torso',
         ['weight'] = 0,
@@ -4603,7 +4666,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'A nice piece of clothing'
     },
-    ['arms'] = {
+    ['arms']                        = {
         ['name'] = 'arms',
         ['label'] = 'Arms',
         ['weight'] = 0,
@@ -4615,7 +4678,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'A nice piece of clothing'
     },
-    ['jeans'] = {
+    ['jeans']                       = {
         ['name'] = 'jeans',
         ['label'] = 'Jeans',
         ['weight'] = 0,
@@ -4627,7 +4690,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'A nice piece of clothing'
     },
-    ['shoes'] = {
+    ['shoes']                       = {
         ['name'] = 'shoes',
         ['label'] = 'Shoes',
         ['weight'] = 0,
@@ -4639,7 +4702,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'A nice piece of clothing'
     },
-    ['mask'] = {
+    ['mask']                        = {
         ['name'] = 'mask',
         ['label'] = 'Mask',
         ['weight'] = 0,
@@ -4651,7 +4714,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'A nice piece of clothing'
     },
-    ['ears'] = {
+    ['ears']                        = {
         ['name'] = 'ears',
         ['label'] = 'Ears',
         ['weight'] = 0,
@@ -4663,7 +4726,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'A nice piece of clothing'
     },
-    ['glasses'] = {
+    ['glasses']                     = {
         ['name'] = 'glasses',
         ['label'] = 'Glasses',
         ['weight'] = 0,
@@ -4675,7 +4738,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'A nice piece of clothing'
     },
-    ['helmet'] = {
+    ['helmet']                      = {
         ['name'] = 'helmet',
         ['label'] = 'Helmet',
         ['weight'] = 0,
@@ -4687,7 +4750,7 @@ QBShared.Items = {
         ['combinable'] = nil,
         ['description'] = 'A nice piece of clothing'
     },
-    ['bag'] = {
+    ['bag']                         = {
         ['name'] = 'bag',
         ['label'] = 'Bag',
         ['weight'] = 0,
@@ -4698,5 +4761,272 @@ QBShared.Items = {
         ['shouldClose'] = true,
         ['combinable'] = nil,
         ['description'] = 'A nice piece of clothing'
+    },
+
+    -- Trading Cards
+    ['tradingcard_psa']             = {
+        ['name'] = 'tradingcard_psa',
+        ['label'] = 'Card Psa',
+        ['weight'] = 50,
+        ['type'] = 'item',
+        ['image'] = 'tradingcard_psa.png',
+        ['unique'] = true,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'Letter verified with PSA, lets wait for your qualification!'
+    },
+    ['tradingcard_stash']           = {
+        ['name'] = 'tradingcard_stash',
+        ['label'] = 'Card Book',
+        ['weight'] = 50,
+        ['type'] = 'item',
+        ['image'] = 'tradingcard_stash.png',
+        ['unique'] = true,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'Album for collectible cards!'
+    },
+    ['tradingcard_basic']           = {
+        ['name'] = 'tradingcard_basic',
+        ['label'] = 'Card Basic',
+        ['weight'] = 10,
+        ['type'] = 'item',
+        ['image'] = 'tradingcard_basic.png',
+        ['unique'] = true,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'Basic letter, it will serve for your collection'
+    },
+    ['tradingcard_rare']            = {
+        ['name'] = 'tradingcard_rare',
+        ['label'] = 'Card Rare',
+        ['weight'] = 10,
+        ['type'] = 'item',
+        ['image'] = 'tradingcard_rare.png',
+        ['unique'] = true,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'This letter is strange, how crazy...'
+    },
+    ['tradingcard_legendary']       = {
+        ['name'] = 'tradingcard_legendary',
+        ['label'] = 'Card Legendary',
+        ['weight'] = 10,
+        ['type'] = 'item',
+        ['image'] = 'tradingcard_legendary.png',
+        ['unique'] = true,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'A card of peculiar rarity, I would say legendary!'
+    },
+    ['tradingcard_booster_pack']    = {
+        ['name'] = 'tradingcard_booster_pack',
+        ['label'] = 'Card Booster Pack',
+        ['weight'] = 50,
+        ['type'] = 'item',
+        ['image'] = 'tradingcard_booster_pack.png',
+        ['unique'] = true,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'Pack with random TCG cards'
+    },
+    ['tradingcard_booster_legends'] = {
+        ['name'] = 'tradingcard_booster_legends',
+        ['label'] = 'Card Booster Legends',
+        ['weight'] = 50,
+        ['type'] = 'item',
+        ['image'] = 'tradingcard_booster_legends.png',
+        ['unique'] = true,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'Pack with random TCG cards'
+    },
+
+    -- Drugs
+    ['weed']                        = {
+        ['name'] = 'weed',
+        ['label'] = 'Marijuana',
+        ['weight'] = 10,
+        ['type'] = 'item',
+        ['image'] = 'weed.png',
+        ['unique'] = false,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'Hey brother, I think this is so natural...'
+    },
+
+    ['weed_packaged']               = {
+        ['name'] = 'weed_packaged',
+        ['label'] = 'Packaged Marijuana',
+        ['weight'] = 10,
+        ['type'] = 'item',
+        ['image'] = 'weed_packaged.png',
+        ['unique'] = false,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'Hey brother, I think this is so natural...'
+    },
+
+    ['cocaine']                     = {
+        ['name'] = 'cocaine',
+        ['label'] = 'Cocaine',
+        ['weight'] = 10,
+        ['type'] = 'item',
+        ['image'] = 'cocaine.png',
+        ['unique'] = false,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'The powder of love, who would have thought it would be so addictive?'
+    },
+
+    ['cocaine_cut']                 = {
+        ['name'] = 'cocaine_cut',
+        ['label'] = 'Cut Cocaine',
+        ['weight'] = 10,
+        ['type'] = 'item',
+        ['image'] = 'cocaine_cut.png',
+        ['unique'] = false,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'The powder of love, who would have thought it would be so addictive?'
+    },
+
+    ['cocaine_packaged']            = {
+        ['name'] = 'cocaine_packaged',
+        ['label'] = 'Packaged Cocaine',
+        ['weight'] = 10,
+        ['type'] = 'item',
+        ['image'] = 'cocaine_packaged.png',
+        ['unique'] = false,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'The powder of love, who would have thought it would be so addictive?'
+    },
+
+    ['meth']                        = {
+        ['name'] = 'meth',
+        ['label'] = 'Methamphetamine',
+        ['weight'] = 10,
+        ['type'] = 'item',
+        ['image'] = 'meth.png',
+        ['unique'] = false,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = "Oh shit brother, that's hard, very hard."
+    },
+
+    ['chemicals']                   = {
+        ['name'] = 'chemicals',
+        ['label'] = 'Chemicals',
+        ['weight'] = 10,
+        ['type'] = 'item',
+        ['image'] = 'chemicals.png',
+        ['unique'] = false,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = "Oh shit brother, that's hard, very hard."
+    },
+
+    ['meth_packaged']               = {
+        ['name'] = 'meth_packaged',
+        ['label'] = 'Packaged Methamphetamine',
+        ['weight'] = 10,
+        ['type'] = 'item',
+        ['image'] = 'meth_packaged.png',
+        ['unique'] = false,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = "Oh shit brother, that's hard, very hard."
+    },
+
+    ['sorted_money']                = {
+        ['name'] = 'sorted_money',
+        ['label'] = 'Sorted Money',
+        ['weight'] = 10,
+        ['type'] = 'item',
+        ['image'] = 'sorted_money.png',
+        ['unique'] = false,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = "Oh shit brother, that's hard, very hard."
+    },
+
+    ['package_money']               = {
+        ['name'] = 'package_money',
+        ['label'] = 'Packaged Money',
+        ['weight'] = 10,
+        ['type'] = 'item',
+        ['image'] = 'package_money.png',
+        ['unique'] = false,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = "Oh shit brother, that's hard, very hard."
+    },
+    -- idcards
+    ['documents']                   = {
+        ['name'] = 'documents',
+        ['label'] = 'documents',
+        ['weight'] = 1,
+        ['type'] = 'item',
+        ['image'] = 'id-card.png',
+        ['unique'] = true,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'Documenti.'
+    },
+    ['drive']                       = {
+        ['name'] = 'drive',
+        ['label'] = 'drive',
+        ['weight'] = 1,
+        ['type'] = 'item',
+        ['image'] = 'drive.png',
+        ['unique'] = true,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'Documenti.'
+    },
+    ['weapons']                     = {
+        ['name'] = 'weapons',
+        ['label'] = 'weapons',
+        ['weight'] = 1,
+        ['type'] = 'item',
+        ['image'] = 'weapons.png',
+        ['unique'] = true,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'Weapon License'
+    },
+
+    ['cryptostick']                 = {
+        ['name'] = 'cryptostick',
+        ['label'] = 'cryptostick',
+        ['weight'] = 1,
+        ['type'] = 'item',
+        ['image'] = 'cryptostick.png',
+        ['unique'] = false,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'Special item.'
     },
 }
